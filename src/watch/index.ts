@@ -60,10 +60,11 @@ export async function startWatching(options: WatchOptions): Promise<void> {
 
       const ignorePatterns = [
         'node_modules', '.git', 'dist', 'build', '.next',
-        'coverage', '.cache', '.turbo', '.ctx',
+        'coverage', '.env', '.cache', '.turbo', '.ctx',
       ];
-      for (const pattern of ignorePatterns) {
-        if (relativePath.includes(pattern)) return;
+      const parts = relativePath.split('/');
+      for (const part of parts) {
+        if (ignorePatterns.includes(part)) return;
       }
 
       if (timeout) clearTimeout(timeout);

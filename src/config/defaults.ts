@@ -38,6 +38,8 @@ export const DEFAULT_CONFIG: CtxConfig = {
       'build',
       '.next',
       'coverage',
+      '.env',
+      '.env.*',
       '*.log',
       '.cache',
       '.turbo',

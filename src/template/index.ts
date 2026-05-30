@@ -105,9 +105,14 @@ export function getTemplate(cwd: string, name: string): ContextTemplate | null {
 }
 
 export function createTemplate(cwd: string, name: string, template: ContextTemplate): void {
+  const safe = name.replace(/[^a-zA-Z0-9_-]/g, '');
+  if (safe !== name) {
+    console.log(`  ✗ Invalid template name. Use only letters, numbers, hyphens, and underscores.`);
+    return;
+  }
   const dir = getTemplatesDir(cwd);
   if (!existsSync(dir)) {
     mkdirSync(dir, { recursive: true });
   }
-  writeFileSync(resolve(dir, `${name}.json`), JSON.stringify(template, null, 2), 'utf-8');
+  writeFileSync(resolve(dir, `${safe}.json`), JSON.stringify(template, null, 2), 'utf-8');
 }

@@ -12,7 +12,7 @@ export function formatJson(info: ProjectInfo): string {
         : null,
       structure: info.structure.children?.map(c => c.name) ?? [],
       configFiles: info.configFiles.map(c => ({
-        path: c.path,
+        path: c.path.split('/').pop() || c.path,
         type: c.type,
       })),
       keyFiles: info.keyFiles.slice(0, 5).map(f => ({
