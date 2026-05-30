@@ -311,7 +311,10 @@
 
     /* Responsive */
     @media (max-width: 640px) {
-      nav { flex-direction: column; gap: 16px; }
+      nav { flex-wrap: wrap; gap: 8px; }
+      .nav-links { flex-wrap: wrap; gap: 12px; }
+      .nav-links a:not(.btn) { display: none; }
+      .btn { padding: 8px 16px; font-size: 13px; }
       .hero { margin-top: 40px; }
       .terminal-body { font-size: 11px; padding: 16px; }
       .cta-form { flex-direction: column; }
