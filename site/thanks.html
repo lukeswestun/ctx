@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <title>Thanks — ctx</title>
   <meta name="description" content="You're on the waitlist.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -19,8 +21,24 @@
       --text-dim: #999;
       --radius: 8px;
     }
+    @font-face {
+      font-family: 'Inter-fallback';
+      src: local('Arial'), local('Helvetica Neue'), local('sans-serif');
+      size-adjust: 107%;
+      ascent-override: 90%;
+      descent-override: 22%;
+      line-gap-override: 0%;
+    }
+    @font-face {
+      font-family: 'Mono-fallback';
+      src: local('Menlo'), local('Courier New'), local('monospace');
+      size-adjust: 115%;
+      ascent-override: 85%;
+      descent-override: 20%;
+      line-gap-override: 0%;
+    }
     body {
-      font-family: 'Inter', -apple-system, sans-serif;
+      font-family: 'Inter', 'Inter-fallback', -apple-system, sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
@@ -55,7 +73,7 @@
       margin-bottom: 24px;
     }
     .mono {
-      font-family: 'JetBrains Mono', monospace;
+      font-family: 'JetBrains Mono', 'Mono-fallback', monospace;
       color: var(--green);
     }
     .btn {
@@ -75,11 +93,13 @@
   </style>
 </head>
 <body>
+  <main>
   <div class="card">
     <div class="check">✓</div>
     <h1>You're on the list</h1>
     <p>We'll let you know when Pro features launch. In the meantime, <span class="mono">ctx</span> is ready to use.</p>
     <a href="/" class="btn">Back to ctx</a>
   </div>
+  </main>
 </body>
 </html>
