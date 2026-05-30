@@ -24,14 +24,32 @@
       --radius: 8px;
     }
     html { scroll-behavior: smooth; }
+
+    @font-face {
+      font-family: 'Inter-fallback';
+      src: local('Arial'), local('Helvetica Neue'), local('sans-serif');
+      size-adjust: 107%;
+      ascent-override: 90%;
+      descent-override: 22%;
+      line-gap-override: 0%;
+    }
+    @font-face {
+      font-family: 'Mono-fallback';
+      src: local('Menlo'), local('Courier New'), local('monospace');
+      size-adjust: 115%;
+      ascent-override: 85%;
+      descent-override: 20%;
+      line-gap-override: 0%;
+    }
+
     body {
-      font-family: 'Inter', -apple-system, sans-serif;
+      font-family: 'Inter', 'Inter-fallback', -apple-system, sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
-    .mono { font-family: 'JetBrains Mono', monospace; }
+    .mono { font-family: 'JetBrains Mono', 'Mono-fallback', monospace; }
 
     /* Navigation */
     nav {
@@ -44,7 +62,7 @@
       border-bottom: 1px solid var(--border);
     }
     .logo {
-      font-family: 'JetBrains Mono', monospace;
+      font-family: 'JetBrains Mono', 'Mono-fallback', monospace;
       font-size: 20px;
       font-weight: 500;
       color: var(--green);
@@ -99,7 +117,7 @@
       padding: 6px 14px;
       border-radius: 20px;
       margin-bottom: 24px;
-      font-family: 'JetBrains Mono', monospace;
+      font-family: 'JetBrains Mono', 'Mono-fallback', monospace;
     }
     .hero h1 {
       font-size: clamp(36px, 6vw, 64px);
@@ -147,11 +165,11 @@
       font-size: 12px;
       color: var(--text-dim);
       margin-left: 8px;
-      font-family: 'JetBrains Mono', monospace;
+      font-family: 'JetBrains Mono', 'Mono-fallback', monospace;
     }
     .terminal-body {
       padding: 20px 24px;
-      font-family: 'JetBrains Mono', monospace;
+      font-family: 'JetBrains Mono', 'Mono-fallback', monospace;
       font-size: 13px;
       line-height: 1.7;
       overflow-x: auto;
@@ -236,7 +254,7 @@
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 16px 20px;
-      font-family: 'JetBrains Mono', monospace;
+      font-family: 'JetBrains Mono', 'Mono-fallback', monospace;
       font-size: 14px;
       text-align: left;
       margin-bottom: 12px;
@@ -259,6 +277,9 @@
       transition: all .2s;
     }
     .copy-btn:hover { border-color: var(--text-dim); color: var(--text); }
+    .copy-btn .copied-text { display: none; }
+    .copy-btn.copied .default-text { display: none; }
+    .copy-btn.copied .copied-text { display: inline; }
     .install-sub {
       font-size: 13px;
       color: var(--text-dim);
@@ -450,7 +471,7 @@
   <p>Works on macOS, Linux, and Windows.</p>
   <div class="code-block">
     <code>npm install -g ctxdotdev</code>
-    <button class="copy-btn" onclick="copy(this)" data-cmd="npm install -g ctxdotdev">Copy</button>
+    <button class="copy-btn" onclick="copy(this)" data-cmd="npm install -g ctxdotdev"><span class="default-text">Copy</span><span class="copied-text">Copied!</span></button>
   </div>
   <p class="install-sub">Then run <code class="mono">ctx</code> in any project. <a href="https://github.com/lukeswestun/ctx" target="_blank">View on GitHub →</a></p>
 </section>
@@ -481,11 +502,10 @@
 function copy(btn) {
   const text = btn.getAttribute('data-cmd');
   navigator.clipboard.writeText(text).then(() => {
-    btn.textContent = 'Copied!';
-    setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
+    btn.classList.add('copied');
+    setTimeout(() => btn.classList.remove('copied'), 2000);
   });
 }
-
 </script>
 
 </body>
