@@ -1,0 +1,7 @@
+# ctx ignore file — same syntax as .gitignore
+# ctx respects both .gitignore and .ctxignore combined
+
+*.generated.*
+/vendor/
+/ios/
+/android/
