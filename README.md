@@ -7,13 +7,12 @@
 ## Quick Start
 
 ```bash
-# Install via npm
-npm install -g @ctx/cli
+# Install from source
+git clone https://github.com/lukeswestun/ctx.git
+cd ctx
+npm install && npm run build && npm link
 
-# Or via Homebrew (coming soon)
-brew install ctx
-
-# Generate context for your project
+# Then generate context in any project
 cd my-project
 ctx
 

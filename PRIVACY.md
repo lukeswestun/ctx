@@ -37,4 +37,4 @@ At any time, you can:
 
 ## Contact
 
-Open an issue on GitHub: https://github.com/opencode-ai/ctx/issues
+Open an issue on GitHub: https://github.com/lukeswestun/ctx/issues

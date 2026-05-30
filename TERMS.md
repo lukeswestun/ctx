@@ -32,4 +32,4 @@ These terms are governed by the laws of the United States.
 
 ## 8. Contact
 
-Open an issue on GitHub: https://github.com/opencode-ai/ctx/issues
+Open an issue on GitHub: https://github.com/lukeswestun/ctx/issues

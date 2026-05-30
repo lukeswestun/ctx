@@ -326,7 +326,7 @@
   <div class="nav-links">
     <a href="#features">Features</a>
     <a href="#install">Install</a>
-    <a href="https://github.com/opencode-ai/ctx" target="_blank">GitHub</a>
+    <a href="https://github.com/lukeswestun/ctx" target="_blank">GitHub</a>
     <a href="#waitlist" class="btn btn-primary">Get Early Access</a>
   </div>
 </nav>
@@ -337,7 +337,7 @@
   <p>Stop re-explaining your codebase to AI. ctx scans your project, analyzes structure and dependencies, and gives every AI coding tool the context it needs — with one CLI command.</p>
   <div class="hero-actions">
     <a href="#install" class="btn btn-primary">Install Now</a>
-    <a href="https://github.com/opencode-ai/ctx" target="_blank" class="btn btn-outline">View on GitHub →</a>
+    <a href="https://github.com/lukeswestun/ctx" target="_blank" class="btn btn-outline">View on GitHub →</a>
   </div>
 </section>
 
@@ -422,18 +422,16 @@
     <code>npm install -g @ctx/cli</code>
     <button class="copy-btn" onclick="copy(this)" data-cmd="npm install -g @ctx/cli">Copy</button>
   </div>
-  <div class="code-block">
-    <code>brew install ctx</code>
-    <button class="copy-btn" onclick="copy(this)" data-cmd="brew install ctx">Copy</button>
-  </div>
-  <p class="install-sub">Then run <code class="mono">ctx</code> in any project. <a href="https://github.com/opencode-ai/ctx" target="_blank">View full docs →</a></p>
+  <p class="install-sub">⚠️ Not published to npm yet. For now, <a href="https://github.com/lukeswestun/ctx" target="_blank">build from source</a>. Then run <code class="mono">ctx</code> in any project.</p>
 </section>
 
 <section class="cta" id="waitlist">
   <h2>Get early access to Pro features</h2>
   <p>Smart templates, watch mode, team sharing, and more. Join the waitlist.</p>
-  <form class="cta-form" action="https://formspree.io/f/your-form-id" method="POST">
+  <form class="cta-form" action="https://formspree.io/f/mkoeeekp" method="POST">
     <input type="email" name="email" placeholder="your@email.com" required>
+    <input type="hidden" name="_next" value="https://ctx.dev">
+    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
     <button type="submit" class="btn btn-primary">Join Waitlist</button>
   </form>
   <p style="margin-top: 12px; font-size: 13px; color: var(--text-dim);">No spam. Just launch announcements.</p>
@@ -442,8 +440,8 @@
 <footer>
   <span>❯ ctx — MIT License</span>
   <div class="footer-links">
-    <a href="https://github.com/opencode-ai/ctx" target="_blank">GitHub</a>
-    <a href="https://github.com/opencode-ai/ctx/issues" target="_blank">Issues</a>
+    <a href="https://github.com/lukeswestun/ctx" target="_blank">GitHub</a>
+    <a href="https://github.com/lukeswestun/ctx/issues" target="_blank">Issues</a>
     <a href="/privacy">Privacy</a>
   </div>
 </footer>
@@ -456,13 +454,7 @@ function copy(btn) {
     setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
   });
 }
-document.querySelector('.cta-form')?.addEventListener('submit', function(e) {
-  const email = this.querySelector('input').value;
-  if (email && email.includes('@')) {
-    this.querySelector('button').textContent = 'Signed up!';
-    this.querySelector('button').style.background = '#00CC34';
-  }
-});
+
 </script>
 
 </body>

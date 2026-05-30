@@ -31,7 +31,7 @@ program
   .description('Project context for AI coding tools')
   .version(getVersion());
 
-program.addCommand(contextCommand);
+program.addCommand(contextCommand, { isDefault: true });
 program.addCommand(initCommand);
 program.addCommand(watchCommand);
 program.addCommand(configCommand);
