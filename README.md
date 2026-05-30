@@ -2,74 +2,145 @@
 
 **One command. Perfect context. Every AI tool.**
 
-`ctx` is a CLI tool that gives every AI coding tool perfect project context with one command. Works with Cursor, Claude Code, GitHub Copilot, Continue.dev, Codex, and any LLM.
+`ctx` scans your project, detects the framework (Next.js, React, Vue, Django, Express, Go, Rust — 30+), reads config files, analyzes dependencies, and copies a concise context summary to your clipboard. Paste into any AI coding tool.
 
 ## Quick Start
 
 ```bash
-# Install via npm
 npm install -g ctxdotdev
-
-# Then generate context in any project
-cd my-project
+cd your-project
 ctx
-
-# Context is copied to your clipboard. Paste into any AI tool.
 ```
 
-## Why ctx?
+That's it. Context is copied to your clipboard. Paste it into Cursor, Claude Code, Copilot, or any LLM.
 
-**The problem:** Every time you use an AI coding tool, you have to re-explain your codebase. What framework is this? What's the project structure? What are the dependencies? You waste 15+ minutes per session setting up context.
+## Why?
 
-**The solution:** `ctx` scans your project, analyzes its structure, dependencies, and configuration, and produces a compact context summary. One command. One second. Perfect context.
+Every time you use an AI coding tool, you have to re-explain your codebase. *"This is a Next.js app with TypeScript, Prisma, and Tailwind..."* — 15 minutes gone.
 
-## Commands
+`ctx` gives the AI the same context in one second. No more repeating yourself.
+
+## Examples
+
+### Next.js + TypeScript
+```
+$ ctx
+
+Project: my-app ── Node / Next.js
+
+  Dependencies: 312 (289 production)
+  Git branch: main
+
+  Structure:
+    ├── src/
+    ├── public/
+    ├── prisma/
+    ├── package.json
+    ├── tsconfig.json
+    ├── next.config.ts
+    └── tailwind.config.ts
+
+  Config files:
+  → my-app/tsconfig.json (TypeScript config)
+  → my-app/next.config.ts (Next.js config)
+  → my-app/tailwind.config.ts (Tailwind config)
+  → my-app/vitest.config.ts (Vitest config)
+
+  Key files:
+  → package.json (2.3KB) — 1h ago
+  → tsconfig.json (642B) — 1d ago
+  → README.md (1.1KB) — 3d ago
+
+  ✓ Context copied to clipboard. Ready for AI.
+```
+
+### Django (Python)
+```
+$ ctx
+
+Project: blog ── Python / Django
+
+  Dependencies: 0
+  Git branch: main
+
+  Structure:
+    ├── blog/
+    ├── manage.py
+    ├── requirements.txt
+    ├── pyproject.toml
+    ├── Dockerfile
+    └── docker-compose.yml
+
+  Config files:
+  → blog/manage.py (Django manage)
+  → blog/requirements.txt (Python deps)
+  → blog/pyproject.toml (Python project)
+  → blog/Dockerfile (Dockerfile)
+  → blog/docker-compose.yml (Docker Compose)
+
+  ✓ Context copied to clipboard. Ready for AI.
+```
+
+### Go API
+```
+$ ctx
+
+Project: api ── Go / Gin
+
+  Dependencies: 0
+  Git branch: main
+
+  Structure:
+    ├── cmd/
+    ├── internal/
+    ├── go.mod
+    ├── go.sum
+    ├── Dockerfile
+    └── Makefile
+
+  Config files:
+  → api/go.mod (Go module)
+  → api/Makefile (Makefile)
+
+  ✓ Context copied to clipboard. Ready for AI.
+```
+
+## All Commands
 
 | Command | Description |
 |---------|-------------|
 | `ctx` | Generate context and copy to clipboard |
 | `ctx init` | Initialize ctx in this project |
-| `ctx watch` | Watch files and auto-update context (Pro) |
-| `ctx config` | View or edit project configuration |
-| `ctx template` | Manage context templates (Pro) |
-| `ctx doctor` | Check installation and setup |
+| `ctx watch` | Watch files, auto-update context on changes |
+| `ctx template` | List, create, and use context templates |
+| `ctx config` | View project configuration |
+| `ctx doctor` | Check installation and project setup |
 
-## Features
+## Watch Mode
 
-- **Cross-platform** — Works with Cursor, Claude Code, Copilot, Codex, and any LLM
-- **One command** — `ctx` generates context in under a second
-- **Privacy-first** — All processing local. Nothing leaves your machine.
-- **Smart prioritization** — Auto-detects what's most relevant
-- **Project-aware** — Detects framework, dependencies, structure automatically
+Regenerate context automatically whenever a file changes:
 
-## Output Example
-
+```bash
+ctx watch
 ```
-Project: my-app ── Node / Next.js
 
-  Dependencies: 1,234 (312 production)
-  Git branch: main
+The output updates in real-time. Great for long AI coding sessions where your project keeps changing.
 
-  Structure:
-  ├── src/
-  ├── public/
-  ├── package.json
-  ├── tsconfig.json
-  └── next.config.js
+## Templates
 
-  Config files:
-  → tsconfig.json (TypeScript config)
+Use different context profiles for different tasks:
 
-  Key files:
-  → package.json — 2h ago
-  → src/app/layout.tsx — 3h ago
-
-  ✓ Context copied to clipboard. Ready for AI.
+```bash
+ctx template list
+ctx template use review     # Focus on changed files
+ctx template use debug      # Include dependency details
+ctx template use onboard    # Full project overview
+ctx template create my-custom
 ```
 
 ## Configuration
 
-Create a `.ctx/config.json` in your project root:
+Create `.ctx/config.json` in your project root:
 
 ```json
 {
@@ -83,8 +154,20 @@ Create a `.ctx/config.json` in your project root:
 }
 ```
 
-Or use `.ctxignore` for additional file exclusions (same syntax as `.gitignore`).
+## Supported Frameworks
+
+**Node.js**: Next.js, React, Vue, Svelte, SvelteKit, Nuxt, Angular, NestJS, Express, Fastify, Hono, Gatsby, Remix, Astro, Solid, tRPC, Electron, Expo, React Native, Preact, Lit, Docusaurus, VitePress, Eleventy
+
+**Python**: Django, Flask, FastAPI, Tornado, aiohttp, Starlette
+
+**Go**: Gin, Echo, Fiber, Chi
+
+**Rust**: Axum, Actix, Rocket, Tide, Warp, Leptos, Yew
+
+## Privacy
+
+All processing is local. Your code never leaves your machine. No telemetry. No tracking. No cloud.
 
 ## License
 
-MIT — do whatever you want with it.
+MIT
