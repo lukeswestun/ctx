@@ -7,10 +7,8 @@
 ## Quick Start
 
 ```bash
-# Install from source
-git clone https://github.com/lukeswestun/ctx.git
-cd ctx
-npm install && npm run build && npm link
+# Install via npm
+npm install -g ctxdotdev
 
 # Then generate context in any project
 cd my-project

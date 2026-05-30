@@ -1,9 +1,9 @@
 {
-  "name": "@ctx/cli",
+  "name": "ctxdotdev",
   "version": "0.1.0",
   "description": "Project context for AI coding tools — one command, perfect context, every AI tool",
   "bin": {
-    "ctx": "./dist/cli/index.js"
+    "ctx": "dist/cli/index.js"
   },
   "type": "module",
   "scripts": {
@@ -33,7 +33,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lukeswestun/ctx"
+    "url": "git+https://github.com/lukeswestun/ctx.git"
   },
   "engines": {
     "node": ">=18"
