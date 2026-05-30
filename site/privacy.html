@@ -14,10 +14,11 @@
       --green-dim: #00CC34;
       --bg: #0A0A0A;
       --surface: #111111;
-      --border: #1A1A1A;
+      --border: #222;
       --text: #E0E0E0;
-      --text-dim: #888888;
+      --text-dim: #999;
       --radius: 8px;
+      --content-w: 720px;
     }
     body {
       font-family: 'Inter', -apple-system, sans-serif;
@@ -33,7 +34,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 20px 24px;
-      max-width: 720px;
+      max-width: var(--content-w);
       margin: 0 auto;
       border-bottom: 1px solid var(--border);
     }
