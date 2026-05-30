@@ -40,14 +40,6 @@
       descent-override: 22%;
       line-gap-override: 0%;
     }
-    @font-face {
-      font-family: 'Mono-fallback';
-      src: local('Menlo'), local('Courier New'), local('monospace');
-      size-adjust: 115%;
-      ascent-override: 85%;
-      descent-override: 20%;
-      line-gap-override: 0%;
-    }
     body {
       font-family: 'Inter', 'Inter-fallback', -apple-system, sans-serif;
       background: var(--bg);
@@ -55,7 +47,7 @@
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
     }
-    .mono { font-family: 'JetBrains Mono', 'Mono-fallback', monospace; }
+    .mono { font-family: 'JetBrains Mono', monospace; }
 
     nav {
       display: flex;
@@ -67,7 +59,7 @@
       border-bottom: 1px solid var(--border);
     }
     .logo {
-      font-family: 'JetBrains Mono', 'Mono-fallback', monospace;
+      font-family: 'JetBrains Mono', monospace;
       font-size: 20px;
       font-weight: 500;
       color: var(--green);
