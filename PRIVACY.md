@@ -32,7 +32,7 @@ The ctx CLI may use the following:
 
 At any time, you can:
 - Delete your `.ctx/` directory (local config)
-- Uninstall via `npm uninstall -g @ctx/cli`
+- Uninstall via `npm uninstall -g ctxdotdev`
 - Delete your ctx.dev account (future feature)
 
 ## Contact
