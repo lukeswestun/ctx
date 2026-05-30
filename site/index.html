@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ctx — Project Context for AI Coding Tools</title>
-  <meta name="description" content="One command. Perfect context. Every AI tool. ctx gives every AI coding tool perfect project context with one CLI command.">
+  <title>ctx — Perfect Project Context for AI Coding Tools</title>
+  <meta name="description" content="One CLI command gives every AI coding tool perfect project context. ctx scans your codebase for Cursor, Claude Code, and Copilot. Privacy-first, zero config.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
@@ -86,7 +86,7 @@
       font-weight: 500;
       text-decoration: none;
       cursor: pointer;
-      transition: all .2s;
+      transition: background .2s, color .2s, border-color .2s;
       border: none;
       font-family: inherit;
     }
@@ -274,7 +274,7 @@
       font-size: 12px;
       font-family: inherit;
       white-space: nowrap;
-      transition: all .2s;
+      transition: color .2s, border-color .2s;
     }
     .copy-btn:hover { border-color: var(--text-dim); color: var(--text); }
     .copy-btn .copied-text { display: none; }
@@ -375,7 +375,7 @@
   <div class="nav-links">
     <a href="#features">Features</a>
     <a href="#install">Install</a>
-    <a href="https://github.com/lukeswestun/ctx" target="_blank">GitHub</a>
+    <a href="https://github.com/lukeswestun/ctx" target="_blank" rel="noopener noreferrer">GitHub</a>
     <a href="#install" class="btn btn-primary">Get Started</a>
   </div>
 </nav>
@@ -388,7 +388,7 @@
   <p>Stop re-explaining your codebase to AI. ctx scans your project, analyzes structure and dependencies, and gives every AI coding tool the context it needs — with one CLI command.</p>
   <div class="hero-actions">
     <a href="#install" class="btn btn-primary">Install Now</a>
-    <a href="https://github.com/lukeswestun/ctx" target="_blank" class="btn btn-outline">View on GitHub →</a>
+    <a href="https://github.com/lukeswestun/ctx" target="_blank" rel="noopener noreferrer" class="btn btn-outline">View on GitHub →</a>
   </div>
 </section>
 
@@ -471,9 +471,9 @@
   <p>Works on macOS, Linux, and Windows.</p>
   <div class="code-block">
     <code>npm install -g ctxdotdev</code>
-    <button class="copy-btn" onclick="copy(this)" data-cmd="npm install -g ctxdotdev"><span class="default-text">Copy</span><span class="copied-text">Copied!</span></button>
+    <button class="copy-btn" data-cmd="npm install -g ctxdotdev"><span class="default-text">Copy</span><span class="copied-text">Copied!</span></button>
   </div>
-  <p class="install-sub">Then run <code class="mono">ctx</code> in any project. <a href="https://github.com/lukeswestun/ctx" target="_blank">View on GitHub →</a></p>
+  <p class="install-sub">Then run <code class="mono">ctx</code> in any project. <a href="https://github.com/lukeswestun/ctx" target="_blank" rel="noopener noreferrer">View on GitHub →</a></p>
 </section>
 
 <section class="cta" id="updates">
@@ -482,7 +482,7 @@
   <form class="cta-form" action="https://api.web3forms.com/submit" method="POST">
     <input type="hidden" name="access_key" value="0e41e784-9d7b-4e4c-9103-1a89a7c1f743">
     <input type="hidden" name="redirect" value="https://ctx-alg.pages.dev/thanks">
-    <input type="email" name="email" placeholder="your@email.com" required>
+    <input type="email" name="email" placeholder="your@email.com" aria-label="Email address" autocomplete="email" required>
     <button type="submit" class="btn btn-primary">Subscribe</button>
   </form>
 </section>
@@ -492,20 +492,25 @@
 <footer>
   <span>❯ ctx — MIT License</span>
   <div class="footer-links">
-    <a href="https://github.com/lukeswestun/ctx" target="_blank">GitHub</a>
-    <a href="https://github.com/lukeswestun/ctx/issues" target="_blank">Issues</a>
+    <a href="https://github.com/lukeswestun/ctx" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a href="https://github.com/lukeswestun/ctx/issues" target="_blank" rel="noopener noreferrer">Issues</a>
     <a href="/privacy">Privacy</a>
   </div>
 </footer>
 
 <script>
-function copy(btn) {
-  const text = btn.getAttribute('data-cmd');
-  navigator.clipboard.writeText(text).then(() => {
-    btn.classList.add('copied');
-    setTimeout(() => btn.classList.remove('copied'), 2000);
+document.addEventListener('DOMContentLoaded', function() {
+  var btn = document.querySelector('.copy-btn');
+  if (!btn) return;
+  btn.addEventListener('click', function() {
+    var text = this.getAttribute('data-cmd');
+    navigator.clipboard.writeText(text).then(function() {
+      this.classList.add('copied');
+      var self = this;
+      setTimeout(function() { self.classList.remove('copied'); }, 2000);
+    }.bind(this));
   });
-}
+});
 </script>
 
 </body>

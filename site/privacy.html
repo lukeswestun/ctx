@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy — ctx</title>
-  <meta name="description" content="ctx privacy policy.">
+  <title>Privacy Policy — ctx | Project Context for AI Tools</title>
+  <meta name="description" content="ctx processes all code locally on your machine — no telemetry, tracking, or cloud dependency. Learn how your project data stays private and secure at all times.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -20,14 +21,30 @@
       --radius: 8px;
       --content-w: 720px;
     }
+    @font-face {
+      font-family: 'Inter-fallback';
+      src: local('Arial'), local('Helvetica Neue'), local('sans-serif');
+      size-adjust: 107%;
+      ascent-override: 90%;
+      descent-override: 22%;
+      line-gap-override: 0%;
+    }
+    @font-face {
+      font-family: 'Mono-fallback';
+      src: local('Menlo'), local('Courier New'), local('monospace');
+      size-adjust: 115%;
+      ascent-override: 85%;
+      descent-override: 20%;
+      line-gap-override: 0%;
+    }
     body {
-      font-family: 'Inter', -apple-system, sans-serif;
+      font-family: 'Inter', 'Inter-fallback', -apple-system, sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
     }
-    .mono { font-family: 'JetBrains Mono', monospace; }
+    .mono { font-family: 'JetBrains Mono', 'Mono-fallback', monospace; }
 
     nav {
       display: flex;
@@ -39,7 +56,7 @@
       border-bottom: 1px solid var(--border);
     }
     .logo {
-      font-family: 'JetBrains Mono', monospace;
+      font-family: 'JetBrains Mono', 'Mono-fallback', monospace;
       font-size: 20px;
       font-weight: 500;
       color: var(--green);
@@ -143,6 +160,7 @@
   </div>
 </nav>
 
+<main>
 <div class="content">
   <h1>Privacy Policy</h1>
   <p class="date">Last updated: May 30, 2026</p>
@@ -186,13 +204,14 @@
   </ul>
 
   <h2>Contact</h2>
-  <p>Open an issue on <a href="https://github.com/lukeswestun/ctx/issues" target="_blank">GitHub</a> or email security@ctx.dev.</p>
+  <p>Open an issue on <a href="https://github.com/lukeswestun/ctx/issues" target="_blank" rel="noopener noreferrer">GitHub</a> or email security@ctx.dev.</p>
 </div>
+</main>
 
 <footer>
   <span>❯ ctx — MIT License</span>
   <div class="footer-links">
-    <a href="https://github.com/lukeswestun/ctx" target="_blank">GitHub</a>
+    <a href="https://github.com/lukeswestun/ctx" target="_blank" rel="noopener noreferrer">GitHub</a>
     <a href="/privacy">Privacy</a>
   </div>
 </footer>
