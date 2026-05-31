@@ -19,6 +19,7 @@
   "files": [
     "dist",
     "README.md",
+    "CHANGELOG.md",
     "LICENSE"
   ],
   "keywords": [
@@ -31,6 +32,10 @@
     "developer-tools"
   ],
   "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lukeswestun/ctx.git"
@@ -39,7 +44,7 @@
     "node": ">=18"
   },
   "dependencies": {
-"clipboardy": "^4.0.0",
+    "clipboardy": "^4.0.0",
     "commander": "^12.0.0",
     "fast-glob": "^3.3.2",
     "ignore": "^5.3.1"

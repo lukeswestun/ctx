@@ -1,5 +1,9 @@
 # ctx — Project Context for AI Coding Tools
 
+[![CI](https://github.com/lukeswestun/ctx/actions/workflows/ci.yml/badge.svg)](https://github.com/lukeswestun/ctx/actions/workflows/ci.yml)
+[![npm version](https://img.shields.io/npm/v/ctxdotdev)](https://www.npmjs.com/package/ctxdotdev)
+[![npm downloads](https://img.shields.io/npm/dw/ctxdotdev)](https://www.npmjs.com/package/ctxdotdev)
+
 **One command. Perfect context. Every AI tool.**
 
 `ctx` scans your project, detects the framework (Next.js, React, Vue, Django, Express, Go, Rust — 30+), reads config files, analyzes dependencies, and copies a concise context summary to your clipboard. Paste into any AI coding tool.
