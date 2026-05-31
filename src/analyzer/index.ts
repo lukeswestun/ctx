@@ -206,15 +206,6 @@ function detectFramework(cwd: string, type: ProjectType): string {
   return 'Unknown';
 }
 
-function parseDependencies(cwd: string): Record<string, string> {
-  try {
-    const pkg = JSON.parse(readFileSync(resolve(cwd, 'package.json'), 'utf-8'));
-    return { ...pkg.dependencies, ...pkg.devDependencies };
-  } catch {
-    return {};
-  }
-}
-
 function analyzeDependencies(cwd: string, type: ProjectType): DepInfo {
   if (type === 'node' || type === 'deno' || type === 'bun') {
     try {

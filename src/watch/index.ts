@@ -1,6 +1,6 @@
 import { watch, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { scanProject, ScannedFile } from '../scanner/index.js';
+import { scanProject } from '../scanner/index.js';
 import { analyzeProject } from '../analyzer/index.js';
 import { formatOutput, OutputFormat } from '../formatter/index.js';
 import { loadConfig } from '../config/index.js';

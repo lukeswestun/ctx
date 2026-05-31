@@ -31,10 +31,6 @@ export function saveConfig(cwd: string, config: CtxConfig): void {
   writeFileSync(getConfigPath(cwd), JSON.stringify(config, null, 2), 'utf-8');
 }
 
-export function ensureConfig(cwd: string): CtxConfig {
-  return loadConfig(cwd);
-}
-
 function deepMerge(base: CtxConfig, override: Partial<CtxConfig>): CtxConfig {
   return {
     ...base,
