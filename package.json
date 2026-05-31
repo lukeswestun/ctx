@@ -1,6 +1,6 @@
 {
   "name": "ctxdotdev",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Project context for AI coding tools — one command, perfect context, every AI tool",
   "main": "dist/cli/index.js",
   "exports": {
