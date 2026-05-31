@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.9 — 2026-05-31
+
+- Added `main` and `exports` fields for Bundlephobia compatibility
+- Updated vitest to v4 (requires Node 22+)
+- Dropped c8 dev dependency
+
+## 0.1.8 — 2026-05-31
+
+- Migrated to npm Trusted Publishing with OIDC (no tokens needed)
+- Published with signed provenance attestation
+- Added CI/CD workflows: CI (push/PR) and Publish (tag)
+- Removed npm classic token from publish pipeline
+
 ## 0.1.2 — 2026-05-30
 
 - Improved framework detection (30+ frameworks)
